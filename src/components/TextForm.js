@@ -25,9 +25,10 @@ export default function TextForm(props) {
     const [text, setText] = useState('')
 
     return (
-            <>
-            <div className="container">
-                <div className="mb-3">
+        <>
+        <div className="container" style={ {color: props.mode==='light'?'black':'white' } } >
+            <div className="container" style={ {color: props.mode==='light'?'black':'white' } }>
+                <div className="mb-3" style={ {color: props.mode==='light'?'black':'white' } }>
                     <h1>{ props.setHeading }</h1>
                     <textarea className="form-control" value={ text } onChange={ handleOnChangeUpper } id="textBox" rows="8"></textarea>
                     <br/>
@@ -37,12 +38,12 @@ export default function TextForm(props) {
                     <button className='btn btn-primary mx-2 my-2' onClick={ handleOnClickClear } >Clear Text</button>
             </div>
 
-            <div className="container my-3">
+            <div className="container my-3" style={ {color: props.mode==='light'?'black':'white' } }>
                 <h1>Text Summary</h1>
                 <p>{ text.split(' ').length - 1 } words and { text.length } characters</p>
                 <p>{ 0.008 * (text.split(' ').length - 1) } minutes read</p>
             </div>
-
-            </>
+        </div>
+        </>
   )
 }
