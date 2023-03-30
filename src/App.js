@@ -3,6 +3,15 @@ import './App.css';
 import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
+import About from './components/About';
+import Contact from './components/Contact';
+
+import {
+  BrowserRouter as Router,
+  Routes as Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   
@@ -34,15 +43,19 @@ function App() {
   }
 
   return (
-    <>
-    <Navbar title="TextUtils" aboutText="About" mode={ mode } toggleMode = { toggleMode }/> 
+    <div>
+    <Router>
+    <Navbar title="TextUtils" aboutText="About" mode={ mode } contactText="Contact Us" toggleMode = { toggleMode }/> 
     <Alert alert = { alert }/>
-    
-    <div className='container'>
-      <TextForm alert={ showAlert } setHeading="Enter Text" mode={ mode } />
+    <Switch>
+      <Route path='/' element= {<TextForm alert={ showAlert } setHeading="Enter Text" mode={ mode } />} />
+
+      <Route path='/about' element= {<About mode={ mode } />} />
+
+      <Route path='/contact' element= {<Contact contactText="Contact Us" mode={ mode } />} />
+    </Switch>
+    </Router>
     </div>
-    
-    </>
   );
 }
 
