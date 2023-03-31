@@ -52,7 +52,7 @@ function App() {
 
       <Route path='/about' element= {<About mode={ mode } />} />
 
-      <Route path='/contact' element= {<Contact contactText="Contact Us" mode={ mode } />} />
+      <Route path='/contact' element= {<Contact contactText="Contact Us" mode={ mode } alert={ showAlert } />} />
     </Switch>
     </Router>
     </div>
