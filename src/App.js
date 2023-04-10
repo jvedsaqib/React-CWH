@@ -45,7 +45,7 @@ function App() {
   return (
     <div>
     <Router>
-    <Navbar title="TextUtils" aboutText="About" mode={ mode } contactText="Contact Us" toggleMode = { toggleMode }/> 
+    <Navbar title="TextUtils" aboutText="About" mode={ mode } contactText="Contact Us" galleryText="Gallery" toggleMode = { toggleMode }/> 
     <Alert alert = { alert }/>
     <Switch>
       <Route path='/' element= {<TextForm alert={ showAlert } setHeading="Enter Text" mode={ mode } />} />
